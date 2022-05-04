@@ -6,7 +6,7 @@ This module contains two [USceneComponent](https://docs.unrealengine.com/en-US/A
 
 The [UHandPoseRecognizer](../Source/OculusHandPoseRecognition/Public/HandPoseRecognizer.h) class is the core of our hand recognition system.  It regularly polls the [Oculus Hands API](../../../../../Engine/Plugins/Runtime/Oculus/OculusVR/Source/OculusInput/Public/OculusInputFunctionLibrary.h) to record hand bone information when it can be reliably assessed.  Wrist bone information is acquired from the motion controller component that the pose recognizer is attached to on the player's VR character.
 
-<img width="256" src="./Media/recognizer_attachment.png" alt="Recognizer attached to controller." />
+<img src="./Media/recognizer_attachment.png" alt="Recognizer attached to controller." />
 
 There can be multiple recognizers per hand, each with its own set of hand poses to recognize.  The main reason to group hand poses into one recognizer is when they are mutually exclusive from one another.  In our showcase, we provide a recognizer for American Sign Language numbers and another for letters.  In actual ASL, there is a way to distinguish the letter 'O' and the number '0', but in our example we have limited ourselves to static hand poses and having them recognized in separate recognizers allows us to recognize both in parallel.
 
@@ -67,7 +67,7 @@ While confidence levels are much easier to handle than raw errors, the latter is
 
 In the details section of a hand pose recognizer, you will find the *Hand Pose Recognition* section.
 
-<img width="256" src="./Media/recognizer_config.png" alt="Recognizer configuration." />
+<img src="./Media/recognizer_config.png" alt="Recognizer configuration." />
 
 The *side* value must be set to recognize either the left or right hand. You can disable a recognizer by setting the side to none.
 
@@ -85,13 +85,13 @@ Each pose has a name.  That name is not required to be unique even within the sa
 
 The first blueprint node that you need to know about is the one that outputs the current hand pose as an encoded string to the output log.  In the following image you can see an example where recognizers for both hands have been wired to input events to a *Log Encoded Hand Pose* node.
 
-<img width="256" src="./Media/log_encoded_pose.png" alt="Log hand pose." />
+<img src="./Media/log_encoded_pose.png" alt="Log hand pose." />
 
 In our case, the input events are the CTRL-L and CTRL-R keyboard events. A typical workflow is to generate a few hand poses, output them to the UE4 log window, and transfer those strings to a hand pose recognizer either as is or modified as described previously by removing bones, deactivating specific angles or adding weights.
 
 The hand pose recognizer offers a blueprint node to retrieve it's current state simply called *Get Recognized Hand Pose*.
 
-<img width="512" src="./Media/get_recognized_hand_pose.png" alt="Get recognized hand pose." />
+<img src="./Media/get_recognized_hand_pose.png" alt="Get recognized hand pose." />
 
 The image above is taken from the Hand Pose Showcase.  The part of the VRCharacter blueprint shown here forwards the recognition state of the recognizer of your choice to be displayed on the one of the projector slides.
 
@@ -103,7 +103,7 @@ The class that handles gesture recognition is [UHandGestureRecognizer](../Source
 
 A gesture is defined as a sequence of hand poses.  Our implementation limits gesture recognition from the poses of exactly one hand pose recognizer, as this is likely to be the most common case.  For that reason you only need to attach the gesture recognizer to the pose recognizer that it relies on.
 
-<img width="256" src="./Media/gesture_recognizer.png" alt="Gesture recognizer." />
+<img src="./Media/gesture_recognizer.png" alt="Gesture recognizer." />
 
 In this screenshot, the *LeftFlickSwipeGestureRecognizer* is attached to a component called *LeftFlickSwipePoseRecognizer*.  This left flick gesture is meant to have the projector move to the previous slide in the Hand Pose Showcase.  Another couple of recognizers are attached to the right hand to perform the equivalent action for going to the next slide.
 
@@ -113,11 +113,11 @@ For our Hand Pose Showcase, we have found an interesting sci-fi movie gesture wh
 
 We tried a few other gestures for changing slides, and we found that it was one of the easiest to learn and execute.  Let's first look at the static hand pose recognizer.
 
-<img width="256" src="./Media/flick_pose.png" alt="Flick pose recognition." />
+<img src="./Media/flick_pose.png" alt="Flick pose recognition." />
 
 We have here two poses: the one where we point at the screen and the one where we flick the hand.  Now let's look at the gesture recognizer.
 
-<img width="256" src="./Media/flick_gesture.png" alt="Flick gesture recognition." />
+<img src="./Media/flick_gesture.png" alt="Flick gesture recognition." />
 
 The recognition interval value is there to have a way to throttle the gesture recognition system.  By default it is executed every game tick.  The skipped frames value is a complementary way to enforce delays during gesture recognition.  It was added to experiment with precise throwing but ended up not being required.  It is likely going to be removed in a future version.
 
@@ -137,7 +137,7 @@ The *Is Looping* flag is used to recognize gestures that loop.  Waving your hand
 
 The gesture recognizer was built first and foremost to support the *force grab* and *force throw* gestures.  Let's look at part of the grabbing code in VRCharacter.
 
-<img width="512" src="./Media/force_grab_gesture.png" alt="Grab gesture recognition." />
+<img src="./Media/force_grab_gesture.png" alt="Grab gesture recognition." />
 
 This node returns whether or not a gesture was recognized.  When it is the case, you can access the gesture index, it's name (which may not be unique) and the gesture direction.
 
@@ -147,13 +147,13 @@ In addition to this, we have experimented with a few gesture duration measures. 
 
 The *Behavior* argument allows you to control how to reset the state of the recognizer after a gesture has been recognized.  By default, only the recognized gesture is reset.  In some situations, you may want to reset the state of all gestures.
 
-<img width="512" src="./Media/gesture_state.png" alt="Gesture progress." />
+<img src="./Media/gesture_state.png" alt="Gesture progress." />
 
 The Hand Pose Showcase also illustrates how one can detect that a gesture is in progress.  In this case, we highlight the hand of the player when it is ready to flick to the previous or next projector slide.  In the following image the "Flick" gesture is queried to see if it is currently in progress.
 
 ## 3. Hand Recognition Blueprint Library
 
-<img width="512" src="./Media/wait_nodes.png" alt="Pose and gesture wait nodes." />
+<img src="./Media/wait_nodes.png" alt="Pose and gesture wait nodes." />
 
 ### Waiting for hand pose.
 
@@ -175,7 +175,7 @@ You can loop back into the wait node as shown in the screenshot to wait again.
 
 ### Recording a pose range.
 
-<img width="512" src="./Media/pose_range_recording.png" alt="Pose range recording." />
+<img src="./Media/pose_range_recording.png" alt="Pose range recording." />
 
 The *Record Hand Pose* blueprint is used to record the range of hand bone angles.  In the screenshot above, taken from the *HandPoseShowcase*,  you can start/stop recording using a keyboard key.  When stopped, the node produces a report to the output log like the following, where I recorded the [royal wave](https://www.youtube.com/watch?v=n5pkDB7zEeo).
 
