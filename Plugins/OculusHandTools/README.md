@@ -65,11 +65,11 @@ In making *First Steps with Hands*, we discovered that the two handed rifle was 
 
 ### Example Hands for Tutorials
 
-<img width="256" src="./Media/tutorialhand.png" />
+<img src="./Media/tutorialhand.png" />
 
 The *TutorialHand* actor can be used to display hand poses to the player. You can set the pose by setting the [*Pose String*](./README_HandPoseRecognition.md#pose-strings) property.
 
-<img width="256" src="./Media/tutorialhand_details.png" />
+<img src="./Media/tutorialhand_details.png" />
 
 ## Future Improvements
 
