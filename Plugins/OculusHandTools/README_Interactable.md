@@ -18,7 +18,7 @@ To be selectable, the AInteractable actor needs to have at least one mesh that g
 
 This corresponds to a trace channel that is added to the project settings in the engine collision section as shown below.
 
-<img width="400" src="./Media/trace_channel.png" alt="Interactable trace channel." />
+<img src="./Media/trace_channel.png" alt="Interactable trace channel." />
 
 If your project already has a use for that channel, you will simply have to associate the InteractableTraceChannel to a different collision channel.
 
@@ -26,7 +26,7 @@ If your project already has a use for that channel, you will simply have to asso
 
 The far field selector is meant to be subclassed and customized, but is operational as-is with many configuration parameters.
 
-<img width="400" src="./Media/selector.png" alt="Default far field selector." />
+<img src="./Media/selector.png" alt="Default far field selector." />
 
 Typically the selector will start deactivated.  In the case of the *HandPoseShowcase*, the selector is activated when the user makes an open palm hand pose.  The selection ray starts at the specified *Raycast Offset* relative to the selector actor, and traces in the environment for the specified *Raycast Distance*.
 
