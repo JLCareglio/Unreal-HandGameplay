@@ -33,7 +33,7 @@ The easiest way to get started is to use the prebuilt Unreal Engine from the Epi
 1. Install the [Epic Games Launcher](https://www.epicgames.com/store/en-US/download)
 2. In the launcher, install Unreal Engine 4.27.2 or later
 3. Launch the Unreal Editor
-4. Click "More" <br /><img width="400" src="https://user-images.githubusercontent.com/791774/148618198-afbe2e70-18a4-41ec-9bad-bf90fac05edc.png" />
+4. Click "More" <br /><img src="https://user-images.githubusercontent.com/791774/148618198-afbe2e70-18a4-41ec-9bad-bf90fac05edc.png" />
 5. Click "Browse" and select `HandGameplay.uproject`
 
 #### Oculus Unreal fork
@@ -66,13 +66,12 @@ You can find a detailed breakdown of how the mechanics are implemented [here](./
 
 ## Features
 
-||||
+|**[Teleportation](./Plugins/OculusHandTools/#teleportation)**|<img src="./Media/teleportation.png" />|A simple movement mechanic using pose recognition from the Hand Pose Showcase.|
 |-|-|-|
-|**[Teleportation](./Plugins/OculusHandTools/#teleportation)**|<img width="256" src="./Media/teleportation.png" />|A simple movement mechanic using pose recognition from the Hand Pose Showcase.|
-|**[Grabbing](./Plugins/OculusHandTools/README_HandInput.md)**|<img width="256" src="./Media/grabbing.png" />|A system for recognizing natural grab gestures, attaching the object to your hand, and overriding the pose of your rendered hand for visual feedback.|
+|**[Grabbing](./Plugins/OculusHandTools/README_HandInput.md)**|<img src="./Media/grabbing.png" />|A system for recognizing natural grab gestures, attaching the object to your hand, and overriding the pose of your rendered hand for visual feedback.|
 |**[Throwing](./Plugins/OculusHandTools/#throwing)**|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|This component uses the hand’s historical data to determine the velocity of the thrown object.|
-|**[Button Pushing](./Plugins/OculusHandTools/#pushing-buttons)**|<img width="256" src="./Media/button.png" />|A reliable digital interaction. (Get it, digital? It’s on or off, but also your pointer finger is a digit. I’ll let myself out…)|
-|**[Punching](./Plugins/OculusHandTools/#punching)**|<img width="256" src="./Media/punching.png" />|Punching is a fulfilling interaction with your hands, despite the fast movement being a cause of tracking loss.|
+|**[Button Pushing](./Plugins/OculusHandTools/#pushing-buttons)**|<img src="./Media/button.png" />|A reliable digital interaction. (Get it, digital? It’s on or off, but also your pointer finger is a digit. I’ll let myself out…)|
+|**[Punching](./Plugins/OculusHandTools/#punching)**|<img src="./Media/punching.png" />|Punching is a fulfilling interaction with your hands, despite the fast movement being a cause of tracking loss.|
 |**[Hand Movement Filtering](./Plugins/OculusHandTools/README_HandTrackingFilter.md)**||Stabilizes the hand and finger movement while tracking is low quality or lost. This significantly improves the feel of using your hands, particularly in poor tracking situations like while punching. You can read more about the implementation of this component [here](https://developer.oculus.com/blog/adding-hand-tracking-to-first-steps/).|
-|**[Two-handed Aiming](./Plugins/OculusHandTools/#two-handed-aiming)**|<img width="256" src="./Media/aiming.png" />|Aiming is a reliable, useful, and fulfilling hand interaction when done with both hands.|
+|**[Two-handed Aiming](./Plugins/OculusHandTools/#two-handed-aiming)**|<img src="./Media/aiming.png" />|Aiming is a reliable, useful, and fulfilling hand interaction when done with both hands.|
 |**[Example Hands for Tutorials](./Plugins/OculusHandTools/#example-hands-for-tutorials)**||Effectively illustrate to users the poses your app expects.|
